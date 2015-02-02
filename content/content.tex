@@ -1,0 +1,59 @@
+Пусть дана матрица $\mathcal{A} \in Matr_{n}(\mathbb{C})$ с преобладанием диагональных элементов.
+$$
+\mathcal{A} = \begin{pmatrix}
+a_{11} & a_{12} & \dots & a_{1n} \\
+a_{21} & a_{22} & \dots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots & a_{nn}
+\end{pmatrix},
+$$
+где $i,j = 1 \dots n, a_{ii} \ne a_{jj} \forall i \ne j$.
+Представим матрицу $\mathcal{A}$ в виде $\mathcal{A} = \Lambda - \mathcal{B}$, где
+$$
+\Lambda = \begin{pmatrix}
+a_{11} &   0    & \dots  &   0    \\
+  0    & a_{22} & \dots  &   0    \\
+\vdots & \vdots & \ddots & \vdots \\
+  0    &   0    & \dots  & a_{nn}
+\end{pmatrix},
+\qquad 
+\mathcal{B} = -\begin{pmatrix}
+  0    & a_{12} & \dots  & a_{1n} \\
+a_{21} &   0    & \dots  & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \dots  &   0
+\end{pmatrix}.
+$$
+Матрицу $\Lambda$ назовем {\em невозмущенной} матрицей, её собственными значениями являются числа $a_{11}, \dots , a_{nn}$,
+а собственными векторами - стандартный базис $\vec{e_1} = \{1,0, \dots, 0\} , \dots , \vec{e_n} = \{0,0, \dots, 1\}$.
+Матрицу $\mathcal{B}$ далее будем называт {\em возмущением} матрицы $\Lambda$, а исходную матрицу 
+$\mathcal{A} = \Lambda - \mathcal{B}$ --- {\em возмущенной} матрицей.
+
+Далее рассматривается возмущенная матрица $\Lambda - \mathcal{B}$, причем элементы возмущения малы по сравнению с элементами невозмущенной матрицы. 
+
+Возникает вопрос, можно ли преобразованием подобия привести возмущенную матрицу $\Lambda - \mathcal{B}$ в диагональную матрицу
+$\Lambda - \tilde{\mathcal{B}}\ (\tilde{\mathcal{B}} = \diag(\tilde{b}_{11}, \dots , \tilde{b}_{nn}))$, при каких условиях 
+на возмущение это верно (очевидно, что не при любом возмущении), где искать матрицу $\tilde{\mathcal{B}}$ и как её искать.
+Сразу же ответим еще на один самый важный вопрос: зачем все это? Затем, что собственные значения и собственные векторы диагональной
+матрицы $\Lambda - \tilde{\mathcal{B}}$ известны (или хорошо считаются). А зная их, мы знаем и соответствующие характеристики у
+$\mathcal{A} = \Lambda - \mathcal{B}$, причем они будут близки к характеристикам диагональной мартицы $\Lambda$.
+
+Пусть $\mathcal{X} = (x_{ij})$ -- матрица n-го порядка, тогда через $\mathcal{JX}$ обозначим матрицу $\diag\mathcal{X}$, т.е.
+$$
+\mathcal{JX} = \begin{pmatrix}
+x_{11} &   0    & \dots  &   0    \\
+  0    & x_{22} & \dots  &   0    \\
+\vdots & \vdots & \ddots & \vdots \\
+  0    &   0    & \dots  & x_{nn}
+\end{pmatrix}.
+$$
+Понадобится еще одна матрица $\mathcal{Y} = \Gamma\mathcal{X}$. Определим $\mathcal{Y}$ как решение матричного уравнения
+$$
+\Lambda\mathcal{Y} - \mathcal{Y}\Lambda = \mathcal{X} - \mathcal{JX}.
+$$
+Если матрицы, стоящие слева и справа от знака равенства равны, то равны и их соответствующие элементы, т.е.
+\begin{align*}
+&(\Lambda\mathcal{Y})_{ij} - (\mathcal{Y}\Lambda)_{ij} = x_{ij},\ i \ne j; \\
+&(\Lambda\mathcal{Y})_{ii} - (\mathcal{Y}\Lambda)_{ii} = 0.
+\end{align*}
+Так как матрица $\Lambda$ - диагональная, то $(\Lambda\mathcal{Y})_{ij} = a_{ii}y_{ij}$, поэтому из 
