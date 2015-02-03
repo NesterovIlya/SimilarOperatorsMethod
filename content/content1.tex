@@ -1,0 +1,57 @@
+
+Проверим сжимаемость отображения $\Phi$ в этом шаре:
+\begin{multline*}
+\|\Phi (\mathcal{X}) - \Phi (\mathcal{Y}) \| = \| \mathcal{B}\Gamma \mathcal{X} - \Gamma \mathcal{XJB} - \Gamma \mathcal{XJ}(\mathcal{B}\Gamma\mathcal{X}) + \mathcal{B} - \mathcal{B}\Gamma \mathcal{Y} + \Gamma \mathcal{YJB} + \Gamma \mathcal{YJ}(\mathcal{B}\Gamma\mathcal{Y}) - \\ 
+\shoveleft{ -\mathcal{B}\| = \| \mathcal{B}\Gamma (\mathcal{X-Y}) - \Gamma (\mathcal{X-Y})\mathcal{JB} - \Gamma\mathcal{XJ}(\mathcal{B}\Gamma\mathcal{X}) + \Gamma \mathcal{YJ} (\mathcal{B}\Gamma\mathcal{Y}) - \Gamma\mathcal{YJ}(\mathcal{B}\Gamma\mathcal{X}) +}\\
+\shoveleft{ + \Gamma \mathcal{YJ}(\mathcal{B}\Gamma\mathcal{X}) \| = \| \mathcal{B}\Gamma(\mathcal{X-Y}) - \Gamma\mathcal{(X-Y)}\mathcal{JB} - \Gamma (\mathcal{X- Y}) \mathcal{J}(\mathcal{B}\Gamma\mathcal{X}) - \Gamma \mathcal{YJ}(\mathcal{B}\Gamma(\mathcal{X}-}\\
+\shoveleft{ -\mathcal{Y})) \| \leqslant 2\varepsilon \| \mathcal{X-Y} \| + 2\varepsilon ^2 r\| \mathcal{X-Y} \| = (2\varepsilon + 2\varepsilon ^2 r)\| \mathcal{X-Y} \|}\\ 
+\end{multline*}
+Итак, еще одно условие (на сжимаемость отображения) $2\varepsilon + 2\varepsilon ^2 r < 1.$ Проверим его:
+$$
+2\varepsilon + 2\varepsilon ^2 r < 2 \cdot \frac{1}{4} + 2 \cdot \frac{1}{16} r = \frac{1}{2} + \frac{1}{8} r < 1
+$$
+При $r = 4$ все выполняется.
+
+Тогда получаем, что отображение отображение $\Phi$ переводит шар с центром в нуле и радиусом $4\|\mathcal{B}\|$ в себя и является на этом шаре сжимающим отображением, следовательно, существует внутри шара неподвижная точка отображения $\Phi$ , являющаяся единственным решением уравнения \eqref{11} и ее можно найти по методу простых итераций, используя в качестве нулевого приближения нулевой оператор, тогда:
+$$
+\mathcal{X}^{(0)} = 0;
+$$
+$$
+\mathcal{X}^{(1)} = \mathcal{B};
+$$
+$$
+\mathcal{X}^{(2)} = \mathcal{B}\Gamma\mathcal{B} - \Gamma\mathcal{BJB} - \Gamma\mathcal{BJ}(\mathcal{B}\Gamma\mathcal{B}) + \mathcal{B};
+$$
+\begin{multline*}
+\mathcal{X}^{(3)} = \mathcal{B}\Gamma(\mathcal{B}\Gamma\mathcal{B} - \Gamma\mathcal{BJB} - \Gamma\mathcal{BJ}(\mathcal{B}\Gamma\mathcal{B}) + \mathcal{B})-\Gamma(\mathcal{B}\Gamma\mathcal{B} - \Gamma\mathcal{BJB} - \Gamma\mathcal{BJ}(\mathcal{B}\Gamma\mathcal{B}) + \mathcal{B})\mathcal{JB} - \\
+\shoveleft{- \Gamma(\mathcal{B}\Gamma\mathcal{B} - \Gamma\mathcal{BJB} - \Gamma\mathcal{BJ}(\mathcal{B}\Gamma\mathcal{B}) + \mathcal{B})\mathcal{JB} \Gamma(\mathcal{B}\Gamma\mathcal{B} - \Gamma\mathcal{BJB} - \Gamma\mathcal{BJ}(\mathcal{B}\Gamma\mathcal{B}) + \mathcal{B});}
+\end{multline*}
+и так далее.
+
+Итак, доказана теорема (1), являющаяся основной теоремой метода подобных оперторов в приложении к матрицам.
+
+\textbf{Теорема~1.}
+{ \it Пусть элементы $a_{ij}$ исходной матрицы $\mathcal{A}$ таковы, что выполнено условие
+$$
+4\|\mathcal{A} - \Lambda\| \gamma < 1,
+$$
+где $\Lambda = \diag(\mathcal{A}), \gamma = (\min\limits_{i \neq j}(|a_{ii} - a_{jj}|))^{-1}.$
+Тогда имеет место равенство:
+$$
+\mathcal{A}(E + \Gamma\mathcal{X}) = (\Lambda - \mathcal{JX})(E + \Gamma\mathcal{X}),
+$$
+где матрица $\mathcal{X}$ есть решение нелинейного матричного уравнения
+$$
+\mathcal{X} = \mathcal{B}(\Gamma\mathcal{X}) - (\Gamma\mathcal{X})(\mathcal{JB}) - (\Gamma\mathcal{X})\mathcal{J}(\mathcal{B}\Gamma\mathcal{X}) + \mathcal{B},
+$$
+матрицы $\Gamma\mathcal{X}$ и $\mathcal{JX}$ определяются формулами \eqref{3} и \eqref{8} и это решение $\mathcal{X}$ может быть найдено по методу простых итерацый, если в качестве нулевого приближения взять нулевой оператор.
+}
+ 
+Если нас интересует спектр, то
+ \begin{eqnarray}
+   \mathcal{JX} = \mathcal{J}(\mathcal{B}\Gamma\mathcal{X}) + \mathcal{B},
+   \label{spect}
+\end{eqnarray}
+поэтому, например, для первого приближения $\mathcal{JB} = 0,$ для второго $\mathcal{JX}^{(2)} = \mathcal{J}(\mathcal{B}\Gamma\mathcal{B})+\mathcal{B}.$
+
+Важное замечание. При поиске $\mathcal{JX}$ (или различных приближений к нему) сначала решаем уравнение \eqref{11} и потом считаем от него $\mathcal{J}.$ Решать сразу уравнение \eqref{spect} нельзя!
