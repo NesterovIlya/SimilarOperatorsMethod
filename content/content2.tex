@@ -1,0 +1,119 @@
+Так как матрица $\Lambda$ - диагональная, то $(\Lambda\mathcal{Y})_{ij} = a_{ii}y_{ij}$, 
+ поэтому из \eqref{elementsOfequationForY2} сразу следует, что $y_{ii}=0\  \forall i$, а \eqref{elementsOfequationForY1} перепишется в виде
+$$
+a_{ii} y_{ij}-a_{jj} y_{ij}=x_{ij},
+$$
+откуда 
+\begin{equation}\label{yij}
+y_{ij}=\frac{x_{ij}}{a_{ii}-a_{jj}},\ i \ne j 
+\end{equation}
+
+Напомним, что предполагалось изначально $a_{ii} \ne a_{jj}$ при $i \ne j$, поэтому формула \eqref{yij} корректна.
+
+Итак, получаем, что матрица $\Gamma\mathcal{X}$ имеет вид
+$$
+\Gamma\mathcal{X}=
+\begin{pmatrix}
+             0               & \frac{x_{12}}{a_{11}-a_{22}} & \dots  & \frac{x_{1n}}{a_{11}-a_{nn}} \\
+\frac{x_{21}}{a_{22}-a_{11}} &               0              & \dots  & \frac{x_{2n}}{a_{22}-a_{nn}} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{x_{n1}}{a_{nn}-a_{11}} & \frac{x_{n2}}{a_{nn}-a_{22}} & \dots  &              0               
+\end{pmatrix},
+$$
+то есть у нее главная диагональ нулевая, а остальные элементы определены формулой \eqref{yij}, или, короче:
+\begin{equation}\label{GXij}
+\left(\Gamma\mathcal{X}\right)_{ij}=
+\begin{cases}
+	&\frac{x_{ij}}{a_{ii}-a_{jj}}, i \ne j, \\
+	&0, i=j.
+\end{cases} 
+\end{equation}
+
+
+Если внимательно посмотрель на формулы \eqref{JXmatrix} и \eqref{GXij}, определяющие матрицы $\Gamma\mathcal{X}$ и $\mathcal{J}\mathcal{X}$ для заданной матрицы $\mathcal{X}$, то легко увидеть замечательное свойство 
+$$
+\Gamma(\mathcal{J}\mathcal{X})=\mathcal{J}(\Gamma\mathcal{X})=0.
+$$
+Заметим также, что если известна величина $\|\mathcal{X}\|$, то $\|\mathcal{J}\mathcal{X}\| \leq \|\mathcal{X}\|$ и \\
+$\|\Gamma\mathcal{X}\| \leq \frac{1}{\min_{i \ne j}|a_{ii}-a_{jj}|} \|\mathcal{X}\|$, обозначим $\gamma = \frac{1}{\min_{i \ne j}|a_{ii}-a_{jj}|}$.
+
+Продолжим пока работать с матрицами $\Gamma\mathcal{X}$ и $\mathcal{J}\mathcal{X}$, посчитаем элементы их произведения:
+\begin{equation}
+\left(\left(\Gamma\mathcal{X}\right)\left(\mathcal{J}\mathcal{X}\right)\right)_{ij}=\sum_{r \ne i}{(\Gamma\mathcal{X})_{ir}(\mathcal{J}\mathcal{X})_{rj}}=
+\begin{cases}
+&(\Gamma\mathcal{X})_{ij}\mathcal{X}_{jj}, i \ne j, \\
+&0, i=j.
+\end{cases} \notag
+\end{equation}
+Таким образом, матрица $\left(\left(\Gamma\mathcal{X}\right)\left(\mathcal{J}\mathcal{X}\right)\right)$ наследует структуру матрицы $\Gamma\mathcal{X}$ и \\
+$\mathcal{J}\left(\left(\Gamma\mathcal{X}\right)\left(\mathcal{J}\mathcal{X}\right)\right)=0$.
+
+Будем теперь искать такую неизвестную матрицу $\mathcal{X}$, чтобы возмущенная матрица $\mathcal{A}-\mathcal{B}$ была подобна диагональной матрице $\mathcal{A}~-~\mathcal{J}\mathcal{X}$, то есть чтобы выполнялось матричное равенство
+\begin{equation}\label{eq1}
+(\mathcal{A}-\mathcal{B})(\mathcal{E}+\Gamma\mathcal{X})=(\mathcal{E}+\Gamma\mathcal{X})(\mathcal{A-JX}),
+\end{equation}
+здесь через $\mathcal{E}$ обозначена единичная матрица и в роли матрицы $\mathcal{U}$, осуществляющей преобразование подобия, выступает матрица $\mathcal{U}~=~\mathcal{E}+\Gamma\mathcal{X}$.
+
+Раскроем левую и правую части равенства \eqref{eq1} и учтем \eqref{equationForY} с $\mathcal{Y}=\Gamma\mathcal{X}$:
+\begin{align}
+&\mathcal{A-B}+\mathcal{A}\Gamma\mathcal{X}-\mathcal{B}\Gamma\mathcal{X}=\mathcal{A-JX}+\Gamma\mathcal{X}\mathcal{A}-\Gamma\mathcal{XJX};\\ \notag
+&\mathcal{A}\Gamma\mathcal{X}-\Gamma\mathcal{XA}-\mathcal{B}\Gamma\mathcal{X}+\Gamma\mathcal{XJX}-\mathcal{B}+\mathcal{JX}=0;\\ \notag
+&\mathcal{X-JX}-\mathcal{B}\Gamma\mathcal{X}+\Gamma\mathcal{XJX}-\mathcal{B}+\mathcal{JX}=0;\\ \notag
+&\mathcal{X}=\mathcal{B}\Gamma\mathcal{X}-\Gamma\mathcal{XJX}+\mathcal{B}. \label{Xmatrix}
+\end{align}
+Итак, мы получили уравнение \eqref{Xmatrix} относительно оператора $\mathcal{X}$, решение которого удовлетворяет равенству \eqref{eq1}.
+
+Применим $\mathcal{J}$ к уравнению \eqref{Xmatrix}
+\begin{equation}\label{JtoXmatrix}
+\mathcal{JX}=\mathcal{J}(\mathcal{B}\Gamma\mathcal{X})+\mathcal{JB}
+\end{equation}
+
+Подставим \eqref{JtoXmatrix} в \eqref{Xmatrix}
+\begin{equation}\label{Xmatrix2}
+\mathcal{X}=\mathcal{B}\Gamma\mathcal{X}-\Gamma\mathcal{XJB}-\Gamma\mathcal{XJ}(\mathcal{B}\Gamma\mathcal{X})+\mathcal{B}.
+\end{equation}
+
+Займемся поисками условий разрешимости уравнения \eqref{Xmatrix2}, имеющего вид
+\begin{equation}\label{Xmatrix3}
+\mathcal{X}=\Phi(\mathcal{X}).
+\end{equation}
+В этом нам поможет принцип сжимающих отображений, который мы применим к уравнению \eqref{Xmatrix2}.
+
+(Формулировка принципа сжимающих отображений для матриц). Если в пространстве матриц есть сжимающее отображение $\Phi$, переводящее некоторую область в себя, то в ней имеется единственная неповижная точка и вся область при неограниченном повторении отображения $\Phi$ стягивается к ней.
+
+Напомним также, что отражение $\Phi$ называется сжимающим, если
+$$
+\|\Phi\mathcal{X}-\Phi\mathcal{Y}\|\leq \alpha\|\mathcal{X-Y}\|,
+$$
+где $\mathcal{X}$ и $\mathcal{Y}$-- матрицы, $\alpha < 1$ и $\|.\|$-- любая норма в пространстве матриц.
+
+Неподвижная точка $\mathcal{Y}$ отображения $\Phi$ есть решение матричного уравнения $\mathcal{Y}~=~\Phi\mathcal{Y}$.
+
+Вернемся к уравнению \eqref{Xmatrix2} и найдем такой шар с центром в точке 0, который отображение $\Phi$ переводит сам в себя, т.е. если $\|\mathcal{X}\|<r\|\mathcal{B}\|$, то и $\|\Phi(\mathcal{X})\|<r\|\mathcal{B}\|$.
+$$
+\|\Phi(\mathcal{X})\|\leq \|\mathcal{B}(\Gamma\mathcal{X})-(\Gamma\mathcal{X})(\mathcal{JB})-(\Gamma\mathcal{X})\mathcal{J}(\mathcal{B}\Gamma\mathcal{X})+\mathcal{B}\|\leq \gamma \|\mathcal{B}\|~ \|\mathcal{X}\|+\gamma \|\mathcal{B}\|~ \|\mathcal{X}\|+\gamma^2 \|\mathcal{B}\|~ \|\mathcal{X}\|^2 + \|\mathcal{B}\|;
+$$
+Так как $\|\mathcal{X}\| \leq r\|\mathcal{B}\|$:
+$$
+\gamma r \|\mathcal{B}\|^2+\gamma r \|\mathcal{B}\|^2+\gamma^2 \|\mathcal{B}\|^3 r^2 + \|\mathcal{B}\| \leq r\|\mathcal{B}\|,
+$$
+Получим квадратное уравнение относительно $r$:
+$$
+r^2 \gamma^2 \|\mathcal{B}\|^2 + r (2\gamma \|\mathcal{B}\|-1)+1 \leq 0.
+$$
+Пусть $\varepsilon=\gamma \|\mathcal{B}\|$, тогда:
+\begin{align}
+&\varepsilon^2 r^2 + (2 \varepsilon - 1)r + 1 \leq 0,\\ \label{leq1}
+&\mathcal{D}=(2\varepsilon-1)^2 - 4\varepsilon^2 = 4\varepsilon^2-4\varepsilon+1-4\varepsilon^2=1-4\varepsilon, \notag
+\end{align}
+для существования корней (и решений неравенства \eqref{leq1}) необходимо выполнение условия $\mathcal{D}~>~0$, откуда $1~-~4\varepsilon~>~0$, т.е. $\varepsilon~<~\frac{1}{4}$.
+Итак, первое условие на возмущение получено:
+\begin{equation}\label{cond1}
+\gamma \|\mathcal{B}\| < \frac{1}{4}.
+\end{equation}
+
+Найдем из \eqref{leq1} оценку на радиус шара r:
+$$
+r=\frac{1-2\varepsilon\mp\sqrt{1-4\varepsilon}}{2\varepsilon^2};
+$$
+при $\varepsilon=\frac{1}{4}, r=4.$
