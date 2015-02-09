@@ -39,21 +39,20 @@ $\Lambda - \tilde{\mathcal{B}}\ (\tilde{\mathcal{B}} = \diag(\tilde{b}_{11}, \do
 $\mathcal{A} = \Lambda - \mathcal{B}$, причем они будут близки к характеристикам диагональной мартицы $\Lambda$.
 
 Пусть $\mathcal{X} = (x_{ij})$ -- матрица n-го порядка, тогда через $\mathcal{JX}$ обозначим матрицу $\diag\mathcal{X}$, т.е.
-$$
+\begin{equation}\label{JXmatrix}
 \mathcal{JX} = \begin{pmatrix}
 x_{11} &   0    & \dots  &   0    \\
   0    & x_{22} & \dots  &   0    \\
 \vdots & \vdots & \ddots & \vdots \\
   0    &   0    & \dots  & x_{nn}
 \end{pmatrix}.
-$$
+\end{equation}
 Понадобится еще одна матрица $\mathcal{Y} = \Gamma\mathcal{X}$. Определим $\mathcal{Y}$ как решение матричного уравнения
-$$
+\begin{equation}\label{equationForY}
 \Lambda\mathcal{Y} - \mathcal{Y}\Lambda = \mathcal{X} - \mathcal{JX}.
-$$
+\end{equation}
 Если матрицы, стоящие слева и справа от знака равенства равны, то равны и их соответствующие элементы, т.е.
-\begin{align*}
-&(\Lambda\mathcal{Y})_{ij} - (\mathcal{Y}\Lambda)_{ij} = x_{ij},\ i \ne j; \\
-&(\Lambda\mathcal{Y})_{ii} - (\mathcal{Y}\Lambda)_{ii} = 0.
-\end{align*}
-Так как матрица $\Lambda$ - диагональная, то $(\Lambda\mathcal{Y})_{ij} = a_{ii}y_{ij}$, поэтому из 
+\begin{align}
+&(\Lambda\mathcal{Y})_{ij} - (\mathcal{Y}\Lambda)_{ij} = x_{ij},\ i \ne j; \label{elementsOfequationForY1}\\
+&(\Lambda\mathcal{Y})_{ii} - (\mathcal{Y}\Lambda)_{ii} = 0. \label{elementsOfequationForY2}
+\end{align} 
